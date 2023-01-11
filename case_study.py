@@ -19,9 +19,9 @@ from streamlit_option_menu import option_menu
 st.set_page_config(layout="wide")
 
 # In[2]:
-covid_raw=pd.read_csv(r"C:\Users\Harry Xu\Desktop\data\covid_19_clean_complete.csv")
+covid_raw=pd.read_csv("covid_19_clean_complete.csv")
 covid=covid_raw.copy()
-covid_full=pd.read_csv(r"C:\\Users\\Harry Xu\\Desktop\\data\\worldometer_data.csv")
+covid_full=pd.read_csv("worldometer_data.csv")
 
 covid=covid.groupby(['Country/Region','Date','WHO Region'])[['Confirmed','Deaths','Recovered','Active']].sum().reset_index()
 
