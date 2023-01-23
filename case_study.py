@@ -606,7 +606,7 @@ if selected=="Data Analysis":
     
 if selected=="Conclusion":
     st.title("Conclusion")
-    st.markdown("Throughout the analysis, 2020 was found to be a difficult year in fighting against covid. Some countries suffered at the start of the year, while others' situation grew worse later on. On the whole, all cases are growing in this year, but actually circumstances was becoming better. But now its too soon to say that the virus has little threat, as")
+    st.markdown("Throughout the analysis, 2020 was found to be a difficult year in fighting against covid. Some countries suffered at the start of the year, while others' situation grew worse later on. On the whole, all cases are growing in this year, but actually circumstances was becoming better. But now its too soon to say that the virus has little threat, we need to reduce gathering activities and advocate postponing the wedding, simplifying the funeral, and not holding the banquet. Try not to hold or participate in large-scale personnel gathering activities, and minimize the scale of the event if it is really necessary. And at any time, pay attention to the epidemic situation and the officially released epidemic dynamics and the activity track of infected persons.")
     
     
     
