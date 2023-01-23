@@ -14,9 +14,9 @@ from streamlit_option_menu import option_menu
 st.set_page_config(layout="wide")
 
 # In[2]:
-covid_raw=pd.read_csv(r"C:\Users\Harry Xu\Desktop\data\covid_19_clean_complete.csv")
+covid_raw=pd.read_csv("covid_19_clean_complete.csv")
 covid=covid_raw.copy()
-covid_full=pd.read_csv(r"C:\\Users\\Harry Xu\\Desktop\\data\\worldometer_data.csv")
+covid_full=pd.read_csv("worldometer_data.csv")
 
 covid=covid.groupby(['Country/Region','Date','WHO Region'])[['Confirmed','Deaths','Recovered','Active']].sum().reset_index()
 
@@ -31,7 +31,7 @@ covid['Risk_level']=pd.cut(covid['Confirmed'],bins=[0,51,101,99999],right=False,
 covid['Month_Name']=covid['Date'].dt.strftime('%B')
 covid_display=covid.copy()
 covid_display['Date']=covid_display['Date'].astype('str')
-covid_total=pd.read_csv(r"C:\Users\Harry Xu\Desktop\data\country_wise_latest.csv")
+covid_total=pd.read_csv("country_wise_latest.csv")
 covid_total.rename({'Confirmed':'Total_Confirmed','Deaths':'Total_Deaths','Recovered':'Total_Recovered','Active':'Total Active'},inplace=True,axis=1)
 covid_total.columns=covid_total.columns.str.replace('/','').str.replace(' ','_').str.replace('%','percentage')
 covid_total.rename({'Country_Region':'Country/Region','WHO_Region':'WHO Region'},inplace=True,axis=1)
