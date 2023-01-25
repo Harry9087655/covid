@@ -89,7 +89,7 @@ if selected=="Data Cleaning":
     code_insert='''covid=covid.groupby(['Country/Region','Date','WHO Region'])[['Confirmed','Deaths','Recovered','Active']].sum().reset_index()'''
     
     st.code(code_insert,language='python')
-    st.markdown("For the last part, it would be useful for our analysis if we rank the number of confirmed from low to high risk")
+    st.markdown("For the last part, it would be useful for our analysis if we rank the number of confirmed from low to high risk, making them ordinal. Low risk is when the number of confirmed cases in a region is lower than 50. Medium risk stands for a region having confirmed cases between 50 and 100, and high risk means more than 100 cases are recorded in one day.")
     st.code('''covid['Risk_level']=pd.cut(covid['Confirmed'],bins=[0,51,101,99999],right=False,labels=['low risk','medium risk','high risk'])''',language='python')
     st.markdown("Next step is to create more variables. One variable is Month. We can extract Month information from the date column in which we convert the values to datetime objects. From date we can also spilt them into different intervals to form Season variables")
     code3='''covid['Date']=pd.to_datetime(covid['Date'])
